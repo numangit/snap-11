@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../favicon.ico';
 import './Header.css';
 
 const Header = () => {
@@ -10,6 +11,7 @@ const Header = () => {
             <Navbar className="navbar navbar-expand-lg fixed-top" bg="" expand="lg">
                 <Container>
                     <Link className="navbar-brand" to="/">
+                        <img className="w-25" src={logo} alt="" />
                         <span className='fw-bolder fs-3'>Snap</span></Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
