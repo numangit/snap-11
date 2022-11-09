@@ -1,5 +1,5 @@
 # Snap Repository
-Snap is indvidual service website using React, firebase, mogonDB.
+Snap is indvidual service is a full-stack website using React, firebase, react router, node, express, mongodb
 
 ## Live Link
 Hosted on Firebase -> [Snap]()
