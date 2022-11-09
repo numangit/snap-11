@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsGithub, BsTwitter, BsInstagram } from "react-icons/bs";
 // import logo from '../TopNavigateBar/icons8-dove-50.png';
-import './Footer.css';
 
 const Footer = () => {
     return (

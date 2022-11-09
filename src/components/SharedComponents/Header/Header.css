@@ -1,0 +1,6 @@
+.bg-trans {
+    backdrop-filter: blur(9.2px);
+    -webkit-backdrop-filter: blur(9.2px);
+    background: hsla(0, 0%, 100%, .23);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+}
