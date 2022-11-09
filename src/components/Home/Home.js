@@ -36,9 +36,20 @@ const Home = () => {
                         </span>
                     </div>
                 </div>
-                <hr className="text-white display-5 mt-0 mt-lg-5" />
-                <h2 className="text-center text-white fs-2 fw-bold"> Add your suggestion</h2>
-                <hr className="text-white display-5" />
+            </div>
+            <hr className="text-white display-5 mt-0 mt-lg-5" />
+            <h2 className="text-center text-white fs-2 fw-bold"> Add your suggestion</h2>
+            <hr className="text-white display-5" />
+            <div className="bg-glass-dark col-11 col-lg-8 mx-auto rounded-5 p-4 p-lg-5 bg-trans">
+                <p className='text-center text-white'>Recommend your taste</p>
+                <div className="form-floating text-dark fs-6 my-2">
+                    <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3"></textarea>
+                    <label htmlFor="floatingInput">Description</label>
+                </div>
+                <button className="w-50 btn btn-lg btn-dark mt-2 text-white" type="submit">Add suggestion</button>
+            </div>
+            <div>
+
             </div>
         </div >
     );
