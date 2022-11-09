@@ -18,19 +18,19 @@ const Header = () => {
                         <Nav className="mx-auto fs-6  bg-trans p-2 rounded-pill text-white">
                             <ul className="navbar-nav ">
                                 <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'nav-link'} aria-current="page" to="home">Home</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} aria-current="page" to="home">Home</NavLink>
                                 </li>
                                 <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'nav-link'} aria-current="page" to="services">Services</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} aria-current="page" to="services">Services</NavLink>
                                 </li>
                                 <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'nav-link'} to="myReviews">My Reviews</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="myReviews">My Reviews</NavLink>
                                 </li>
                                 <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'nav-link'} to="addService">Add Service</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="addService">Add Service</NavLink>
                                 </li>
                                 <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'nav-link'} to="blogs">Blogs</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="blogs">Blogs</NavLink>
                                 </li>
                             </ul>
                         </Nav>

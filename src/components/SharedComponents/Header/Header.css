@@ -4,3 +4,11 @@
     background: hsla(0, 0%, 100%, .23);
     box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
 }
+
+.active-nav {
+    color: #edf4f6 !important;
+}
+
+.active-not {
+    color: #edf4f6 !important;
+}
