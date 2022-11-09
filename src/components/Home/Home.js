@@ -2,6 +2,7 @@ import React from 'react';
 import Lottie from "lottie-react";
 import camera from './56718-camera.json';
 import { Link } from 'react-router-dom';
+import TotalUserRatings from './TotalUserRatings/TotalUserRatings';
 
 const Home = () => {
     return (
@@ -38,6 +39,12 @@ const Home = () => {
                 </div>
             </div>
             <hr className="text-white display-5 mt-0 mt-lg-5" />
+            <h2 className="text-center text-white fs-2 fw-bold">Annual Ratings</h2>
+            <hr className="text-white display-5" />
+            <div className='col-11 col-lg-8 bg-trans rounded-3 p-2 p-lg-5 mx-auto'>
+                <TotalUserRatings></TotalUserRatings>
+            </div>
+            <hr className="text-white display-5 mt-0 mt-lg-5" />
             <h2 className="text-center text-white fs-2 fw-bold"> Add your suggestion</h2>
             <hr className="text-white display-5" />
             <div className="bg-glass-dark col-11 col-lg-8 mx-auto rounded-5 p-4 p-lg-5 bg-trans">
@@ -47,9 +54,6 @@ const Home = () => {
                     <label htmlFor="floatingInput">Description</label>
                 </div>
                 <button className="w-50 btn btn-lg btn-dark mt-2 text-white" type="submit">Add suggestion</button>
-            </div>
-            <div>
-
             </div>
         </div >
     );
