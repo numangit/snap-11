@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 const UpdateReview = () => {
@@ -17,7 +18,7 @@ const UpdateReview = () => {
             {
                 services.map(service => <div key={service.service_id} className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
                     <PhotoProvider>
-                        <PhotoView src="https://photographylife.com/wp-content/uploads/2010/09/Nikon-85mm-f1.4G-Image-Sample-31-1536x1025.jpg">
+                        <PhotoView src={service.picture}>
                             <img className="w-25 m-2 rounded" src={service.picture} alt="Card image" />
                         </PhotoView>
                     </PhotoProvider>
@@ -31,7 +32,7 @@ const UpdateReview = () => {
                             </span>
                             <span className='ms-auto pt-3 pt-lg-0'>
                                 <Link className="my-2 py-0"
-                                    to='/serviceDeatils'>
+                                    to='/serviceDetails'>
                                     <button className="btn bg-dark text-white btn-sm fw-bolder">View Details</button>
                                 </Link>
                             </span>

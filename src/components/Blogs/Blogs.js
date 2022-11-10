@@ -5,7 +5,8 @@ const Blogs = () => {
     return (
         <div className="my-lg-0 pb-sm-5 py-5 mt-5 mb-0 mt-md-0">
             <div>
-                <h4 className="my-2 mt-lg-5 fs-2 fw-semibold text-white">Blogs</h4>
+                <h1 className="my-2 mt-lg-5 display-5 fw-semibold text-white">Blogs</h1>
+                <hr className="col-7 col-lg-4 text-white mx-auto" />
                 <p className='px-lg-0 px-3 fs-6 mb-1 mb-lg-5 text-white'>Here are few blog questions :</p>
                 <Accordion className="mt-3 my-md-3 py-md-0 col-11 col-md-7 mx-auto" >
                     <Accordion.Item className="bg-dark" eventKey="0">

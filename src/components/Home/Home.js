@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import TotalUserRatings from './TotalUserRatings/TotalUserRatings';
 import Recommendation from './Recommendation/Recommendation';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -30,7 +31,7 @@ const Home = () => {
             {
                 services.map(service => <div key={service.service_id} className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
                     <PhotoProvider>
-                        <PhotoView src="https://photographylife.com/wp-content/uploads/2010/09/Nikon-85mm-f1.4G-Image-Sample-31-1536x1025.jpg">
+                        <PhotoView src={service.picture}>
                             <img className="w-25 m-2 rounded" src={service.picture} alt="Card image" />
                         </PhotoView>
                     </PhotoProvider>

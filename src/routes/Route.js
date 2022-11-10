@@ -3,11 +3,11 @@ import Main from "../layouts/Main";
 import Home from "../components/Home/Home";
 import Services from '../components/Services/Services';
 import Blogs from '../components/Blogs/Blogs';
-import Signin from '../components/Signin/Signin';
 import ServiceDetails from "../components/ServiceDetails/ServiceDetails";
 import MyReviews from "../components/MyReviews/MyReviews";
 import UpdateReview from "../components/MyReviews/UpdateReview/UpdateReview";
 import AddService from "../components/AddService/AddService";
+import SigninPage from "../components/SigninPage/SigninPage";
 
 
 export const router = createBrowserRouter([
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
                 element: <Services></Services>
             },
             { path: 'blogs', element: <Blogs></Blogs> },
-            { path: 'signin', element: <Signin></Signin> },
+            { path: 'signin', element: <SigninPage></SigninPage> },
             // {
             //     path: 'services/:id',
             //     loader: async ({ params }) => {

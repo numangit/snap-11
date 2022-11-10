@@ -32,6 +32,10 @@ const Header = () => {
                                 <li className="nav-item text-center mx-lg-2">
                                     <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="blogs">Blogs</NavLink>
                                 </li>
+                                <div className="vr d-none d-lg-block col-lg-1 mx-auto text-dark"></div>
+                                <li className="nav-item text-center mx-lg-2">
+                                    <button className='btn fw-semibold'>Logout</button>
+                                </li>
                             </ul>
                         </Nav>
                     </Navbar.Collapse>
