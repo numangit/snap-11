@@ -32,13 +32,13 @@ export const router = createBrowserRouter([
             { path: 'blogs', element: <Blogs></Blogs> },
             { path: '/SigninPage/SigninPage', element: <SigninPage></SigninPage> },
             { path: '/SignUpPage/SignUpPage', element: <SignUpPage></SignUpPage> },
-            // {
-            //     path: 'services/:id',
-            //     loader: async ({ params }) => {
-            //         return fetch(`https://rise-server-assignment10.vercel.app/servicedetails/${params.id}`)
-            //     },
-            //     element: <ServiceDetails></ServiceDetails>
-            // },
+            {
+                path: 'services/:id',
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                element: <ServiceDetails></ServiceDetails>
+            },
             {
                 path: 'myReviews',
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
@@ -50,10 +50,6 @@ export const router = createBrowserRouter([
             {
                 path: 'addService',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
-            },
-            {
-                path: '/serviceDetails',
-                element: <ServiceDetails></ServiceDetails>
             }
         ])
     }

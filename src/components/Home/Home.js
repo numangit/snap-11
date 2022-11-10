@@ -45,7 +45,7 @@ const Home = () => {
                             </span>
                             <span className='ms-auto pt-3 pt-lg-0'>
                                 <Link className="my-2 py-0"
-                                    to='/serviceDetails'>
+                                    to={`/services/${service._id}`}>
                                     <button className="btn bg-dark text-white btn-sm fw-bolder"> View Details</button>
                                 </Link>
                             </span>
