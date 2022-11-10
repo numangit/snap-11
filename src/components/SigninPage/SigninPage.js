@@ -1,9 +1,8 @@
-// import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import camera from '../Home/56718-camera.json';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SigninPage = () => {
