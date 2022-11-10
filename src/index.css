@@ -25,3 +25,7 @@ code {
   background: rgba(26, 26, 26, .77);
   box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
 }
+
+.w-10 {
+  width: 35px;
+}

@@ -24,9 +24,9 @@ const Home = () => {
                 </div>
             </div>
             <hr className="text-white display-5 mt-0 mt-lg-5" />
-            <h2 className="text-center text-white fs-2 fw-bold"> Latest Services</h2>
+            <h2 className="text-center text-white fs-1 fw-bold"> Latest Services</h2>
             <hr className="text-white display-5" />
-            <p>hi</p>
+            <p className="fs-6 text-white">Check out my latest services. <br /> The latest services comes with 50% offer for the first 5 weeks.</p>
             {
                 services.map(service => <div key={service.service_id} className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
                     <PhotoProvider>
@@ -40,12 +40,12 @@ const Home = () => {
                         <p className="d-none d-sm-block my-1 py-0 text-start">{service.description.slice(0, 100)}...</p>
                         <div className="d-lg-flex">
                             <span className="d-none d-sm-block py-0 me-auto">
-                                <p className="my-2 py-0 " ><small><span className="fw-semibold text-warning">Shot on {service.camera}</span></small></p>
+                                <p className="my-2 py-0 " ><small>Price : $<span className="fw-semibold text-warning">{service.price}</span></small></p>
                             </span>
                             <span className='ms-auto pt-3 pt-lg-0'>
                                 <Link className="my-2 py-0"
-                                    to='/'>
-                                    <button className="btn bg-white btn-sm fw-bolder">Details</button>
+                                    to='/serviceDetails'>
+                                    <button className="btn bg-dark text-white btn-sm fw-bolder"> View Details</button>
                                 </Link>
                             </span>
                         </div>

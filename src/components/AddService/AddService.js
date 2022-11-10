@@ -20,7 +20,7 @@ const AddService = () => {
                         <label htmlFor="floatingInput">Price</label>
                     </div>
                     <div className="form-floating text-dark fs-6 my-2">
-                        <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3"></textarea>
+                        <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3" ></textarea>
                         <label htmlFor="floatingInput">Description</label>
                     </div>
                     <button className="col-10 col-lg-6 btn btn-lg bg-dark mt-2 text-white" type="submit">Add service</button>

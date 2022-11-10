@@ -15,7 +15,7 @@ const Header = () => {
                         <span className='fw-bolder fs-3'>Snap</span></Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mx-auto fs-6  bg-trans p-2 rounded-pill text-white">
+                        <Nav className="ms-auto fs-6  bg-trans p-2 rounded-pill text-white">
                             <ul className="navbar-nav ">
                                 <li className="nav-item text-center mx-lg-2">
                                     <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} aria-current="page" to="home">Home</NavLink>
