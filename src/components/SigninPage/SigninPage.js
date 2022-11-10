@@ -12,7 +12,7 @@ const SigninPage = () => {
                 <Lottie animationData={camera} loop={true} />
             </div>
             <main className="col-11 col-lg-4 my-5 mx-auto bg-glass-dark text-white p-4 rounded-4">
-                <form onSubmit=''>
+                <form>
                     <h1 className="mb-2 fw-normal">Sign in</h1>
                     <p className="text-muted mb-3 fs-6 ">Welcome back!</p>
                     <div className="form-floating text-dark fs-6">
@@ -38,12 +38,11 @@ const SigninPage = () => {
                 </div>
                 <p className='text-center text-muted'>
                     New member ?{' '}
-                    <Link to='SignupPage' className=''>
+                    <Link to='../SignUpPage/SignUpPage' className=''>
                         Sign up
                     </Link>
                     .
                 </p>
-                <p className="mt-2 mb-3 text-muted">Copyright © 2017–2022 Rise.io</p>
             </main>
         </div >
     );

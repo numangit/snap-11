@@ -71,8 +71,6 @@ const ServiceDetails = () => {
                         <button className="ms-auto btn btn-sm btn-primary mt-2 text-white" type="submit">Add Review</button>
                     </div>
                 </div>
-
-
             </div>
         </div >
     );

@@ -34,7 +34,10 @@ const Header = () => {
                                 </li>
                                 <div className="vr d-none d-lg-block col-lg-1 mx-auto text-dark"></div>
                                 <li className="nav-item text-center mx-lg-2">
-                                    <button className='btn fw-semibold'>Logout</button>
+                                    <button className='btn'>Logout</button>
+                                </li>
+                                <li className="nav-item text-center mx-lg-2">
+                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="/SigninPage/SigninPage">Singin</NavLink>
                                 </li>
                             </ul>
                         </Nav>

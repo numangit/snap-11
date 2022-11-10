@@ -8,6 +8,7 @@ import MyReviews from "../components/MyReviews/MyReviews";
 import UpdateReview from "../components/MyReviews/UpdateReview/UpdateReview";
 import AddService from "../components/AddService/AddService";
 import SigninPage from "../components/SigninPage/SigninPage";
+import SignUpPage from "../components/SignUpPage/SignUpPage";
 
 
 export const router = createBrowserRouter([
@@ -28,7 +29,8 @@ export const router = createBrowserRouter([
                 element: <Services></Services>
             },
             { path: 'blogs', element: <Blogs></Blogs> },
-            { path: 'signin', element: <SigninPage></SigninPage> },
+            { path: '/SigninPage/SigninPage', element: <SigninPage></SigninPage> },
+            { path: '/SignUpPage/SignUpPage', element: <SignUpPage></SignUpPage> },
             // {
             //     path: 'services/:id',
             //     loader: async ({ params }) => {
