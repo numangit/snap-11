@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BsFillCameraFill } from 'react-icons/bs';
 import { RiCameraLensFill } from 'react-icons/ri';
 import { MdOutlinePriceChange } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const ServiceDetails = () => {
+    const { user } = useContext(AuthContext);
     return (
         <div className="my-lg-5 pb-sm-5 py-5 py-lg-2 mt-5 mb-0 mt-md-0">
             < h1 className="my-2 mt-lg-5 display-5 fw-semibold text-white" > Service Deatils</h1 >
             <hr className="col-7 col-lg-4 text-white mx-auto" />
+            {/* service details section  */}
             <div>
                 <div>
                     <div className="d-flex my-2 my-lg-2 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
-                        <img className="w-50 m-2 rounded" src="https://photographylife.com/wp-content/uploads/2021/04/Nikon-Z7-II-1536x1083.jpg" alt="Card image" />
+                        <img className="d-none d-sm-block w-50 m-2 rounded" src="https://photographylife.com/wp-content/uploads/2021/04/Nikon-Z7-II-1536x1083.jpg" alt="Card image" />
                         <div className='mx-auto p-4'>
                             <div className="d-lg-flex">
                                 <span className="fs-4 py-0 fw-bold me-auto">Photography</span>
                             </div>
                             <hr className="d-none d-sm-block" />
-                            <p className="d-none d-sm-block py-0 text-start">Description :</p>
-                            <p className="d-none d-sm-block  py-0 text-start">Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accentuate the product in question (though sometimes outdoors or on location). In the same way as commercial portraiture, a product photographer’s goal is to match the vision of the company in question. An outdoor brand will have different needs from a high-end lifestyle company, even if both sell the same underlying type of product, such as clothing or backpacks.</p>
+                            <p className="py-0 text-start">Description :</p>
+                            <p className="py-0 text-start">Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accentuate the product in question (though sometimes outdoors or on location). In the same way as commercial portraiture, a product photographer’s goal is to match the vision of the company in question. An outdoor brand will have different needs from a high-end lifestyle company, even if both sell the same underlying type of product, such as clothing or backpacks.</p>
                         </div>
                     </div>
                 </div>
@@ -64,16 +66,22 @@ const ServiceDetails = () => {
                                 <span className="fs-5 py-0 fw-bold ms-2 me-auto">UserName</span>
                             </div>
                             <hr className="d-none d-sm-block" />
-                            <p className="d-none d-sm-block  py-0 text-start">Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accenth sell the same underlying type of product, such as clothing or backpacks.</p>
+                            <p className="py-0 text-start">Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accenth sell the same underlying type of product, such as clothing or backpacks.</p>
                         </div>
                     </div>
-                    <div className="form-floating text-dark fs-6 my-2">
-                        <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3" ></textarea>
-                        <label htmlFor="floatingInput">Add Review</label>
-                        {/* {
-                            if user there then add comment or send log in
-                        } */}
-                        <button className="ms-auto btn btn-sm btn-primary mt-2 text-white" type="submit">Add Review</button>
+                    <div className='p-2'>
+                        {
+                            user?.uid ?
+                                <div className="form-floating text-dark fs-6 my-2">
+                                    <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3" ></textarea>
+                                    <label htmlFor="floatingInput">Add Review</label>
+                                    <button className="w-100 btn btn-sm btn-primary mt-2 text-white" type="submit">Add Review</button>
+                                </div> :
+                                <div className='my-2 my-lg-4 '>
+                                    <h1 className="text-dark fs-4 fw-semibold ">Please Signin to add a review. <Link to="/SigninPage/SigninPage">Sign In</Link></h1>
+                                </div>
+                        }
+
                     </div>
                 </div>
             </div>

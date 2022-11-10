@@ -5,7 +5,7 @@ import { BsGithub, BsTwitter, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
     return (
-        <div className="bg-dark">
+        <div className="bg-glass-dark">
             <div className="container text-center text-white d-lg-flex py-5 border-top">
                 <div className="mx-auto flex-wrap px-3 py-2 py-lg-0 col-lg-8 px-lg-3">
                     <h4>About this webpsite</h4>

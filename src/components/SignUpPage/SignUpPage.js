@@ -6,6 +6,7 @@ import camera from '../Home/56718-camera.json';
 
 const SignUpPage = () => {
 
+
     return (
         <div className="my-5 py-5 d-flex">
             <main className="col-11 col-lg-4 my-5 mx-auto bg-glass-dark text-white p-4 rounded-4">

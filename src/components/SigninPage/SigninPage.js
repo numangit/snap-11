@@ -1,6 +1,6 @@
 // import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import camera from '../Home/56718-camera.json';
 import { useContext, useState } from 'react';
@@ -8,6 +8,10 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SigninPage = () => {
     const { setUser, loginUser, googleSignin, setLoading } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     //handle submit function
     const handleSubmit = (e) => {
@@ -20,6 +24,7 @@ const SigninPage = () => {
                 setUser(user);
                 setLoading(false);
                 e.target.reset();
+                navigate(from, { replace: true });
             })
             .catch((error) => {
                 console.log(error.message);
@@ -33,6 +38,7 @@ const SigninPage = () => {
                 const user = result.user;
                 setUser(user);
                 setLoading(false);
+                navigate(from, { replace: true });
             }).catch((error) => {
                 console.log(error.message);
             });
