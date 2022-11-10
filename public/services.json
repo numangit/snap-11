@@ -1,0 +1,56 @@
+[
+    {
+        "service_id": "1",
+        "price": "80",
+        "camera": "Nikon Z7 II",
+        "lens": "Canon 85mm f1",
+        "name": "Product Photography",
+        "description": "Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accentuate the product in question (though sometimes outdoors or on location). In the same way as commercial portraiture, a product photographer’s goal is to match the vision of the company in question. An outdoor brand will have different needs from a high-end lifestyle company, even if both sell the same underlying type of product, such as clothing or backpacks.",
+        "picture": "https://photographylife.com/wp-content/uploads/2021/04/Nikon-Z7-II-1536x1083.jpg"
+    },
+    {
+        "service_id": "2",
+        "price": "79",
+        "camera": "Canon Z7 II",
+        "lens": "Canon EF 50mm f/1.4 USM",
+        "name": "Food Photography",
+        "description": "Food photography has experienced a remarkable growth in popularity in recent years thanks to social media. Previously, it was essentially a sub-genre of commercial work – advertisements, cookbooks, menus, and so on – but it’s becoming more a part of documentary photography today.Sometimes, food photographers will replace the actual foods in an image with artificial substitutes that look tastier, such as glue rather than milk when photographing cereal!",
+        "picture": "https://photographylife.com/wp-content/uploads/2013/06/Food-Photography-5.jpg"
+    },
+    {
+        "service_id": "3",
+        "price": "50",
+        "camera": "Nikon s10 II",
+        "lens": "Canon EF 24-70mm f/2.8L II USM",
+        "name": "Travel Photography",
+        "description": "One of the broadest types of people photography is travel – photographing life in another area of the world, whether portraits or candid images. Good travel photography captures the striking similarities and differences among people across the world, making us feel more connected and aware of how other people live.",
+        "picture": "https://photographylife.com/wp-content/uploads/2018/11/Moving-Subject-AF-C-Nikon-Z7-1536x1024.jpg"
+    },
+    {
+        "service_id": "4",
+        "price": "29",
+        "camera": "Nikon D50 II",
+        "lens": "Nikon AF-S VR Micro-NIKKOR",
+        "name": "Wedding Photography",
+        "description": "One of the most important events in many people’s lives is a wedding, and that means wedding photographers have a huge responsibility. Not only do wedding photographers need to have good camera and lighting skills, but they also must know how to work with people and capture the right emotions almost effortlessly. This is a difficult type of photography to practice, and you only get one chance to do it right, so I have a lot of respect for good wedding photographers.",
+        "picture": "https://photographylife.com/wp-content/uploads/2010/09/Nikon-85mm-f1.4G-Image-Sample-31-1536x1025.jpg"
+    },
+    {
+        "service_id": "5",
+        "price": "95",
+        "camera": "Nikon Z4",
+        "lens": "Sony FE 90mm f/2.8 ED G OSS",
+        "name": "Portraits Photography",
+        "description": "The broadest type of people photography is portraiture, covering everything from family portraits to fine-art photography and commercial work. Often, the goal of portraiture is to show the character of a subject – to capture the person’s personality and emotion in an image. Portrait photography is also quite an accessible genre overall, not requiring more than a single prime lens and flash to start at a high level (or whatever equipment you already have if you’re just testing the waters). But capturing the essence of a subject, or meeting the goals for your commercial project, can take a lifetime of work.",
+        "picture": "https://photographylife.com/wp-content/uploads/2018/07/Monochrome-Portrait-Photograph-1536x1152.jpg"
+    },
+    {
+        "service_id": "6",
+        "price": "50",
+        "camera": "Canon Z7 II",
+        "lens": "Canon EF 24-70mm f/2.8L",
+        "name": "Landscape photography",
+        "description": "Landscape photography is another way of saying scenic or environmental photography. It involves taking pictures of a natural scene – often large and grand, but sometimes smaller and more intimate – in a way that brings the viewer into a scene. Landscape photography is one of the most popular types today, spinning off several sub-genres such as storm photography, seascapes, and so on. With a broader definition, it also includes “urban landscape” photography and manmade scenes.",
+        "picture": "https://photographylife.com/wp-content/uploads/2016/06/Mass-1536x1024.jpg"
+    }
+]

@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Lottie from "lottie-react";
 import camera from './56718-camera.json';
 import { Link } from 'react-router-dom';
 import TotalUserRatings from './TotalUserRatings/TotalUserRatings';
+import Recommendation from './Recommendation/Recommendation';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Home = () => {
+    const [services, setServices] = useState([]);
+    useEffect(() => {
+        fetch("services.json")
+            .then(res => res.json())
+            .then(data => setServices(data))
+    }, [])
     return (
         <div className="my-lg-0 pb-sm-5 mt-5 mb-0 mt-md-0">
             <div className="d-block align-items-center d-lg-flex flex-lg-row-reverse">
@@ -18,26 +26,34 @@ const Home = () => {
             <hr className="text-white display-5 mt-0 mt-lg-5" />
             <h2 className="text-center text-white fs-2 fw-bold"> Latest Services</h2>
             <hr className="text-white display-5" />
-
-            <div className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-glass-dark text-white p-2 rounded-3">
-                <img className="w-25 m-2 rounded" src="https://photographylife.com/wp-content/uploads/2010/09/Nikon-85mm-f1.4G-Image-Sample-31-1536x1025.jpg" alt="Card image" />
-                <div className='mx-auto p-0 p-lg-2'>
-                    <p className="fs-4 my-1 py-0 fw-bold">Wedding Photography</p>
-                    <hr className="d-none d-sm-block my-2" />
-                    <p className="d-none d-sm-block my-1 py-0 text-start">One of the most important events in many people’s lives is a wedding, and that means wedding photographers have a huge responsibility. Not only do wedding photographers need to have good camera and lighting skills, but they also must know how to work with people and capture the right emotions almost effortlessly. This is a difficult type of photography to practice, and you only get one chance to do it right, so I have a lot of respect for good wedding photographers.</p>
-                    <div className="d-lg-flex">
-                        <span className="d-none d-sm-block py-0 me-auto">
-                            <p className="my-2 py-0 " ><small><span className="fw-semibold text-muted">NIKON D800E +</span></small></p>
-                        </span>
-                        <span className='ms-auto pt-3 pt-lg-0'>
-                            <Link className="my-2 py-0"
-                                to='/'>
-                                <button className="btn bg-white btn-sm fw-bolder">Details</button>
-                            </Link>
-                        </span>
+            <p>hi</p>
+            {
+                services.map(service => <div key={service.service_id} className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
+                    <PhotoProvider>
+                        <PhotoView src="https://photographylife.com/wp-content/uploads/2010/09/Nikon-85mm-f1.4G-Image-Sample-31-1536x1025.jpg">
+                            <img className="w-25 m-2 rounded" src={service.picture} alt="Card image" />
+                        </PhotoView>
+                    </PhotoProvider>
+                    <div className='mx-auto p-0 p-lg-2'>
+                        <p className="fs-4 my-1 py-0 fw-bold text-warning">{service.name}</p>
+                        <hr className="d-none d-sm-block my-2" />
+                        <p className="d-none d-sm-block my-1 py-0 text-start">{service.description.slice(0, 100)}...</p>
+                        <div className="d-lg-flex">
+                            <span className="d-none d-sm-block py-0 me-auto">
+                                <p className="my-2 py-0 " ><small><span className="fw-semibold text-warning">Shot on {service.camera}</span></small></p>
+                            </span>
+                            <span className='ms-auto pt-3 pt-lg-0'>
+                                <Link className="my-2 py-0"
+                                    to='/'>
+                                    <button className="btn bg-white btn-sm fw-bolder">Details</button>
+                                </Link>
+                            </span>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div>)
+            }
+            <Link to='/services'><button className="mx-auto btn btn-dark">See All</button>
+            </Link>
             <hr className="text-white display-5 mt-0 mt-lg-5" />
             <h2 className="text-center text-white fs-2 fw-bold">Annual Ratings</h2>
             <hr className="text-white display-5" />
@@ -48,12 +64,7 @@ const Home = () => {
             <h2 className="text-center text-white fs-2 fw-bold"> Add your suggestion</h2>
             <hr className="text-white display-5" />
             <div className="bg-glass-dark col-11 col-lg-8 mx-auto rounded-5 p-4 p-lg-5 bg-trans">
-                <p className='text-center text-white'>Recommend your taste</p>
-                <div className="form-floating text-dark fs-6 my-2">
-                    <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3"></textarea>
-                    <label htmlFor="floatingInput">Description</label>
-                </div>
-                <button className="w-50 btn btn-lg btn-dark mt-2 text-white" type="submit">Add suggestion</button>
+                <Recommendation></Recommendation>
             </div>
         </div >
     );
