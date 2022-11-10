@@ -1,5 +1,6 @@
 import React from 'react';
-import { AiFillDelete } from 'react-icons/ai';
+import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const UpdateReview = () => {
     return (
@@ -7,36 +8,21 @@ const UpdateReview = () => {
             <h1 className="my-2 mt-lg-5 display-5 fw-semibold text-white">Your reviews</h1>
             <hr className="col-7 col-lg-4 text-white mx-auto" />
             <div className="col-11 col-lg-10 mx-auto">
-                <table class="table table-dark rounded-5">
-                    <thead>
-                        <tr>
-                            <th scope="col">Service</th>
-                            <th scope="col">Review</th>
-                            <th scope="col">Update</th>
-                            <th scope="col">Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td><AiFillDelete /></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="d-flex my-2 mx-auto bg-glass-dark text-white p-2 rounded-2">
+                    <div className='mx-auto p-4'>
+                        <div className="d-lg-flex">
+                            <span className="fs-5 py-0 fw-bold ms-2 me-auto">Service Name</span>
+                            <span className='ms-auto pt-3 pt-lg-0'>
+                                <Link to="../MyReviews/UpdateReview/UpdateReview">
+                                    <button className="btn btn-sm btn-outline-light fw-semibold">Update <AiFillEdit /></button>
+                                </Link>
+                                <button className=" ms-1 btn btn-sm text-white btn-outline-light fw-semibold"><AiFillDelete /></button>
+                            </span>
+                        </div>
+                        <hr className="d-none d-sm-block" />
+                        <p className="d-none d-sm-block  py-0 text-start">Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accenth sell the same underlying type of product, such as clothing or backpacks.</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

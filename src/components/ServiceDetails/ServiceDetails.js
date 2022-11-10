@@ -12,7 +12,7 @@ const ServiceDetails = () => {
             <hr className="col-7 col-lg-4 text-white mx-auto" />
             <div>
                 <div>
-                    <div className="d-flex my-2 my-lg-2 col-11 col-lg-9 col-10 mx-auto  bg-glass-dark text-white p-2 rounded-3">
+                    <div className="d-flex my-2 my-lg-2 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
                         <img className="w-50 m-2 rounded" src="https://photographylife.com/wp-content/uploads/2021/04/Nikon-Z7-II-1536x1083.jpg" alt="Card image" />
                         <div className='mx-auto p-4'>
                             <div className="d-lg-flex">
@@ -24,7 +24,7 @@ const ServiceDetails = () => {
                         </div>
                     </div>
                 </div>
-                <div className="bg-glass-dark text-white my-2 my-lg-3 col-11 col-lg-9 mx-auto p-2 rounded-3 d-lg-flex">
+                <div className="bg-trans text-white my-2 my-lg-3 col-11 col-lg-9 mx-auto p-2 rounded-3 d-lg-flex">
                     <div className="text-start col-11 col-lg-6 p-4">
                         <p className="text-center fs-4 fw-semibold">Camera Details</p>
                         <hr className="text-Muted" />
@@ -39,7 +39,7 @@ const ServiceDetails = () => {
                     <div className="text-start col-11 col-lg-6 p-4">
                         <p className="text-center fs-4 fw-semibold">Details</p>
                         <hr />
-                        <p><small className="text-muted"><MdOutlinePriceChange /> Price :</small> $ 55</p>
+                        <p><small className="text-light"><MdOutlinePriceChange /> Price :</small> $ 55</p>
                         <Link to={`../`} className='mx-auto'><button className="btn w-100 btn-outline-light fw-semibold my-2">Book Now</button></Link>
                     </div>
                 </div>
@@ -48,6 +48,7 @@ const ServiceDetails = () => {
             <div className="col-11 col-lg-9 mx-auto">
                 <h4 className="my-2 my-lg-5 fs-2 text-start ms-2 ms-lg-5 ps-lg-5 fw-semibold text-white">Reviews :</h4>
                 <div className="bg-trans p-5 rounded-3">
+                    {/* review card */}
                     <div className="d-flex my-2 mx-auto bg-glass-dark text-white p-2 rounded-2">
                         <div className='mx-auto p-4'>
                             <div className="d-lg-flex">
