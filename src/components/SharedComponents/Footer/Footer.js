@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="bg-dark">
             <div className="container text-center text-white d-lg-flex py-5 border-top">
-                <div className="mx-auto flex-wrap px-3 py-3 py-lg-0 col-lg-5 px-lg-3">
+                <div className="mx-auto flex-wrap px-3 py-2 py-lg-0 col-lg-8 px-lg-3">
                     <h4>About this webpsite</h4>
                     <hr className="my-1 d-lg-none" />
                     <hr className="d-none d-lg-block p-1" />
