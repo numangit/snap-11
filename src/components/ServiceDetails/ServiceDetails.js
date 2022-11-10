@@ -12,12 +12,14 @@ const ServiceDetails = () => {
     const handleReview = event => {
         event.preventDefault();
         const reviewDescription = event.target.review.value;
+        const serviceName = name;
         const userName = user?.displayName || 'unknown';
         const image = user?.photoURL;
         const email = user?.email || 'unregistered';
 
         const review = {
             service: _id,
+            serviceName,
             name: userName,
             image,
             reviewDescription: reviewDescription,
