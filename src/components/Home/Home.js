@@ -10,7 +10,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 const Home = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("services.json")
+        fetch("http://localhost:5000/HomeServices")
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

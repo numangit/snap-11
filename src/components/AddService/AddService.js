@@ -13,12 +13,24 @@ const AddService = () => {
                         <label htmlFor="floatingInput">Photo URL</label>
                     </div>
                     <div className="form-floating text-dark fs-6 my-2">
-                        <input type="text" name="fullName" className="form-control" id="floatingInput" placeholder="name@example.com" required />
+                        <input type="text" name="name" className="form-control" id="floatingInput" placeholder="name@example.com" required />
                         <label htmlFor="floatingInput">Service Name</label>
                     </div>
                     <div className="form-floating text-dark fs-6 my-2">
+                        <input type="text" name="camera" className="form-control" id="floatingCameraInput" placeholder="name@example.com" required />
+                        <label htmlFor="floatingCameraInput">Camera Name</label>
+                    </div>
+                    <div className="form-floating text-dark fs-6 my-2">
+                        <input type="text" name="lens" className="form-control" id="floatingInput" placeholder="name@example.com" required />
+                        <label htmlFor="floatingInput">Lens Name</label>
+                    </div>
+                    <div className="form-floating text-dark fs-6 my-2">
+                        <input type="time" name="time" className="form-control" id="floatingTimeInput" placeholder="name@example.com" required />
+                        <label htmlFor="floatingTimeInput">Current Time (hh:mm)</label>
+                    </div>
+                    <div className="form-floating text-dark fs-6 my-2">
                         <input type="number" name="price" className="form-control" id="floatingInput" placeholder="name@example.com" required />
-                        <label htmlFor="floatingInput">Price</label>
+                        <label htmlFor="floatingInput">Service Price</label>
                     </div>
                     <div className="form-floating text-dark fs-6 my-2">
                         <textarea name="description" className="form-control" id="floatingInput" placeholder="name@example.com" required rows="3" ></textarea>
