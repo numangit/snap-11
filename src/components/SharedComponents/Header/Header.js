@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from '../favicon.ico';
 import './Header.css';
 
 const Header = () => {
+    const { signoutUser, user, setUser } = useContext(AuthContext);
+
+    //handler signout function
+    const handleSignOut = () => {
+        signoutUser()
+            .then(() => { setUser(null) })
+            .catch((error) => {
+                console.error(error)
+            });
+    }
 
     return (
         <div>
@@ -23,22 +34,31 @@ const Header = () => {
                                 <li className="nav-item text-center mx-lg-2">
                                     <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} aria-current="page" to="services">Services</NavLink>
                                 </li>
-                                <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="myReviews">My Reviews</NavLink>
-                                </li>
-                                <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="addService">Add Service</NavLink>
-                                </li>
+                                {
+                                    user?.uid &&
+                                    <li className="nav-item text-center mx-lg-2">
+                                        <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="myReviews">My Reviews</NavLink>
+                                    </li>
+                                }
+                                {
+                                    user?.uid &&
+                                    <li className="nav-item text-center mx-lg-2">
+                                        <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="addService">Add Service</NavLink>
+                                    </li>
+                                }
                                 <li className="nav-item text-center mx-lg-2">
                                     <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="blogs">Blogs</NavLink>
                                 </li>
                                 <div className="vr d-none d-lg-block col-lg-1 mx-auto text-dark"></div>
-                                <li className="nav-item text-center mx-lg-2">
-                                    <button className='btn'>Logout</button>
-                                </li>
-                                <li className="nav-item text-center mx-lg-2">
-                                    <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="/SigninPage/SigninPage">Singin</NavLink>
-                                </li>
+                                {
+                                    user?.uid ?
+                                        <li className="nav-item text-center mx-lg-2">
+                                            <button onClick={handleSignOut} className='btn'>Logout</button>
+                                        </li> :
+                                        <li className="nav-item text-center mx-lg-2">
+                                            <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="/SigninPage/SigninPage">Singin</NavLink>
+                                        </li>
+                                }
                             </ul>
                         </Nav>
                     </Navbar.Collapse>

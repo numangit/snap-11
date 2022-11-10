@@ -52,9 +52,14 @@ const ServiceDetails = () => {
                     <div className="d-flex my-2 mx-auto bg-glass-dark text-white p-2 rounded-2">
                         <div className='mx-auto p-4'>
                             <div className="d-lg-flex">
-                                {/* {
-                                    user?.pictur? then div : icon
-                                   } */}
+                                {/* {user?.uid ?
+                                    <> {user?.photoURL ? <img className="rounded-circle w-custom bg-light" src={user?.photoURL} title={user?.displayName} />
+                                        : <FaUserCircle className="fs-2 text-white" title={user?.displayName} />}
+                                    </>
+                                    : <Link to="SigninPage">
+                                        <button type="button" className="btn btn-glass text-white btn-sm rounded-3" title="Signin">Sign in</button>
+                                    </Link>
+                                } */}
                                 <img className="w-10 rounded-circle" src="https://yt3.ggpht.com/ytc/AMLnZu-QHJPJL38XCYs6Zj8Fq2LytPQlDdZEKAdCatuhTw=s900-c-k-c0x00ffffff-no-rj" alt="" />
                                 <span className="fs-5 py-0 fw-bold ms-2 me-auto">UserName</span>
                             </div>
