@@ -42,15 +42,15 @@ const MyReviews = () => {
                 myReviews.length !== 0 ?
                     myReviews.map(review =>
                         <div key={review._id} className="col-11 col-lg-6 mx-auto rounded-3 my-2 p-2">
-                            <div className="d-flex mx-auto bg-glass-dark text-white">
-                                <div className='mx-auto p-4'>
+                            <div className="d-flex mx-auto bg-glass-dark rounded-3  text-white">
+                                <div className='mx-auto p-4 rounded-3 '>
                                     <div className="d-lg-flex">
                                         <span className="fs-5 py-0 fw-bold ms-2 me-auto">{review.serviceName}</span>
                                         <span className='ms-auto pt-3 pt-lg-0'>
-                                            <Link to="../MyReviews/UpdateReview/UpdateReview">
-                                                <button className="btn btn-sm btn-outline-light fw-semibold">Update<AiFillEdit /></button>
+                                            <Link to={`../MyReviews/UpdateReview/UpdateReview/${review._id}`}>
+                                                <button className="btn btn-sm btn-outline-light fw-semibold" title='update review'><AiFillEdit /></button>
                                             </Link>
-                                            <button onClick={() => handleDelete(review._id)} className=" ms-1 btn btn-sm text-white btn-outline-light fw-semibold"><AiFillDelete /></button>
+                                            <button onClick={() => handleDelete(review._id)} className=" ms-2 btn btn-sm text-white btn-outline-light fw-semibold" title='Delete review'><AiFillDelete /></button>
                                         </span>
                                     </div>
                                     <hr className="d-none d-sm-block" />

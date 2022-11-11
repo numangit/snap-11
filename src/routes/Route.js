@@ -44,7 +44,10 @@ export const router = createBrowserRouter([
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
-                path: '/MyReviews/UpdateReview/UpdateReview',
+                path: '/MyReviews/UpdateReview/UpdateReview/:id',
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/reviews/${params.id}`)
+                },
                 element: <UpdateReview></UpdateReview>
             },
             {

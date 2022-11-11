@@ -48,8 +48,8 @@ const ServiceDetails = () => {
             {/* service details section  */}
             <div>
                 <div>
-                    <div className="d-flex my-2 my-lg-2 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
-                        <img className="d-none d-sm-block w-50 m-2 rounded" src={picture} alt="" />
+                    <div className="d-flex my-2 my-lg-2 col-11 col-lg-9 col-10 mx-auto  bg-glass-dark text-white p-2 rounded-3">
+                        <img className="d-none d-sm-block w-50 m-2 rounded img-fluid" src={picture} alt="" />
                         <div className='mx-auto p-4'>
                             <div className="d-lg-flex">
                                 <span className="fs-4 py-0 fw-bold me-auto">{name}</span>
