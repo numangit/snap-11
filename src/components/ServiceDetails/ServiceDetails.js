@@ -13,8 +13,8 @@ const ServiceDetails = () => {
     const { user, loading, setLoading } = useContext(AuthContext);
     const { _id, name, price, lens, camera, picture, description } = useLoaderData();
     const [serviceReviews, setServiceReviews] = useState();
-    // const [currentServiceReviews, setCurrentServiceReviews] = useState(serviceReviews);
-    console.log(serviceReviews)
+    const [currentServiceReviews, setCurrentServiceReviews] = useState(serviceReviews);
+    console.log(currentServiceReviews)
 
 
     useEffect(() => {
@@ -23,6 +23,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 setServiceReviews(data);
+                setCurrentServiceReviews(data);
                 setLoading(false);
             })
     }, [_id, setLoading])
@@ -54,6 +55,15 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 event.target.reset();
+
+                setLoading(true);
+                fetch(`https://snap-server-11.vercel.app/serviceReviews?service=${_id}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        setServiceReviews(data);
+                        setCurrentServiceReviews(data);
+                        setLoading(false);
+                    })
             })
             .catch(error => console.error(error));
     }
