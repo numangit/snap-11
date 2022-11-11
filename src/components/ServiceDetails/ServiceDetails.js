@@ -13,9 +13,6 @@ const ServiceDetails = () => {
     const { user, loading, setLoading } = useContext(AuthContext);
     const { _id, name, price, lens, camera, picture, description } = useLoaderData();
     const [serviceReviews, setServiceReviews] = useState();
-    const [currentServiceReviews, setCurrentServiceReviews] = useState(serviceReviews);
-    console.log(currentServiceReviews)
-
 
     useEffect(() => {
         setLoading(true);
@@ -23,7 +20,6 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 setServiceReviews(data);
-                setCurrentServiceReviews(data);
                 setLoading(false);
             })
     }, [_id, setLoading])
@@ -61,7 +57,6 @@ const ServiceDetails = () => {
                     .then(res => res.json())
                     .then(data => {
                         setServiceReviews(data);
-                        setCurrentServiceReviews(data);
                         setLoading(false);
                     })
             })
