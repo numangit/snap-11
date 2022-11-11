@@ -2,7 +2,7 @@
 Snap is indvidual service is a full-stack website using React, firebase, react router, node, express, mongodb
 
 ## Live Link
-Hosted on Firebase -> [Snap](https://snap-io.firebaseapp.com)
+Hosted on Firebase -> [Snap](https://snap-io.web.app/)
 
 ## Project description
 
