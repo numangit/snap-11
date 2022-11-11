@@ -12,6 +12,7 @@ const AddService = () => {
         const lens = event.target.lens.value;
         const serviceDescription = event.target.description.value;
         const servicePicture = event.target.photoUrl.value;
+        const uploadDate = new Date();
 
         const newService = {
             name: serviceName,
@@ -19,7 +20,8 @@ const AddService = () => {
             camera,
             lens,
             description: serviceDescription,
-            picture: servicePicture
+            picture: servicePicture,
+            date: uploadDate
         }
 
         fetch('http://localhost:5000/services', {

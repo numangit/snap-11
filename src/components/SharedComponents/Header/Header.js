@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import logo from '../favicon.ico';
 import './Header.css';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     const { signoutUser, user, setUser } = useContext(AuthContext);
@@ -50,9 +51,19 @@ const Header = () => {
                                     <NavLink className={({ isActive }) => isActive ? 'active-nav nav-link fw-semibold' : 'fw-semibold nav-link'} to="blogs">Blogs</NavLink>
                                 </li>
                                 <div className="vr d-none d-lg-block col-lg-1 mx-auto text-dark"></div>
+                                {/* {user?.uid ?
+                                    <> {user?.photoURL ? <img className="rounded-circle w-custom bg-light" src={user?.photoURL} title={user?.displayName} alt="" />
+                                        : <FaUserCircle className="fs-2 text-white" title={user?.displayName} />}
+                                    </>
+                                    : <Link to="SigninPage">
+                                        <button type="button" className="btn btn-glass text-white btn-sm rounded-3" title="Signin">Sign in</button>
+                                    </Link>
+                                } */}
                                 {
                                     user?.uid ?
                                         <li className="nav-item text-center mx-lg-2">
+                                            {user?.photoURL ? <img className="rounded-circle w-10 bg-light" src={user?.photoURL} title={user?.displayName} alt="" />
+                                                : <FaUserCircle className="fs-2 text-white" title={user?.displayName} />}
                                             <button onClick={handleSignOut} className='btn'>Logout</button>
                                         </li> :
                                         <li className="nav-item text-center mx-lg-2">
