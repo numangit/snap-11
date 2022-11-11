@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AddService = () => {
-
+    // adding service data
     const handleAddService = event => {
         event.preventDefault();
         const serviceName = event.target.name.value;
@@ -10,10 +10,9 @@ const AddService = () => {
         const lens = event.target.lens.value;
         const serviceDescription = event.target.description.value;
         const servicePicture = event.target.photoUrl.value;
-        console.log(serviceName, price, camera, lens, serviceDescription, servicePicture);
 
         const newService = {
-            serviceName,
+            name: serviceName,
             price,
             camera,
             lens,
