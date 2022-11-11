@@ -37,7 +37,7 @@ const Home = () => {
                             <img className="w-25 m-2 rounded" src={service.picture} alt="" />
                         </PhotoView>
                     </PhotoProvider>
-                    <div className='mx-auto p-0 p-lg-2'>
+                    <div className='w-100 p-0 p-lg-2'>
                         <p className="fs-4 my-1 py-0 fw-bold text-warning">{service.name}</p>
                         <hr className="d-none d-sm-block my-2" />
                         <p className="d-none d-sm-block my-1 py-0 text-start">{service.description.slice(0, 100)}...</p>
