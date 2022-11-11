@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 const UpdateReview = () => {
     const { _id, reviewDescription } = useLoaderData();
@@ -20,10 +22,21 @@ const UpdateReview = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    alert('updated');
+                    notify()
                 }
             })
     }
+
+    const notify = () => toast.success('Updated Successfully', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    });;
 
     return (
         <div className="my-lg-3 pb-sm-5 py-5 mt-5 mb-0 mt-md-0">

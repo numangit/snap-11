@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext);
@@ -25,13 +26,24 @@ const MyReviews = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        notify()
                         const remaining = myReviews.filter(review => review._id !== id);
                         setMyReviews(remaining);
                     }
                 })
         }
     }
+
+    const notify = () => toast.success('Deleted Successfully', {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    });;
 
     return (
         <div className="my-lg-5 pb-sm-5 py-5 py-lg-2 mt-5 mb-0 mt-md-0">
