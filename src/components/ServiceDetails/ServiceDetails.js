@@ -1,13 +1,29 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { BsFillCameraFill } from 'react-icons/bs';
 import { RiCameraLensFill } from 'react-icons/ri';
 import { MdOutlinePriceChange } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import SpinnerComponent from '../SpinnerComponent/SpinnerComponent';
+import { FaUserCircle } from 'react-icons/fa';
 
 const ServiceDetails = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading, setLoading } = useContext(AuthContext);
     const { _id, name, price, lens, camera, picture, description } = useLoaderData();
+    const [serviceReviews, setServiceReviews] = useState();
+    const [currentServiceReviews, setCurrentServiceReviews] = useState(serviceReviews);
+    console.log(serviceReviews)
+
+
+    useEffect(() => {
+        setLoading(true);
+        fetch(`http://localhost:5000/serviceReviews?service=${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                setServiceReviews(data);
+                setLoading(false);
+            })
+    }, [_id, setLoading])
 
     const handleReview = event => {
         event.preventDefault();
@@ -85,24 +101,38 @@ const ServiceDetails = () => {
                 <h4 className="my-2 my-lg-5 fs-2 text-start ms-2 ms-lg-5 ps-lg-5 fw-semibold text-white">Reviews :</h4>
                 <div className="bg-trans p-5 rounded-3">
                     {/* review card */}
-                    <div className="d-flex my-2 mx-auto bg-glass-dark text-white p-2 rounded-2">
-                        <div className='mx-auto p-4'>
-                            <div className="d-lg-flex">
-                                {/* {user?.uid ?
-                                    <> {user?.photoURL ? <img className="rounded-circle w-custom bg-light" src={user?.photoURL} title={user?.displayName} />
-                                        : <FaUserCircle className="fs-2 text-white" title={user?.displayName} />}
-                                    </>
-                                    : <Link to="SigninPage">
-                                        <button type="button" className="btn btn-glass text-white btn-sm rounded-3" title="Signin">Sign in</button>
-                                    </Link>
-                                } */}
-                                <img className="w-10 rounded-circle" src="https://yt3.ggpht.com/ytc/AMLnZu-QHJPJL38XCYs6Zj8Fq2LytPQlDdZEKAdCatuhTw=s900-c-k-c0x00ffffff-no-rj" alt="" />
-                                <span className="fs-5 py-0 fw-bold ms-2 me-auto">UserName</span>
-                            </div>
-                            <hr className="d-none d-sm-block" />
-                            <p className="py-0 text-start">Another branch of commercial photography is product photography, where you are typically shooting in a studio with careful lighting to accenth sell the same underlying type of product, such as clothing or backpacks.</p>
-                        </div>
-                    </div>
+                    {
+                        loading ? <SpinnerComponent></SpinnerComponent>
+                            : serviceReviews?.map(review =>
+                                <div key={review._id} class="my-2 mx-auto bg-glass-dark text-white p-2 p-lg-4 rounded-2">
+                                    <div className='d-flex'>
+                                        <div className="">
+                                            {
+                                                review.image ?
+                                                    <img className="rounded-circle w-10 mx-2" src={review.image} alt="" />
+                                                    : <FaUserCircle className="fs-3 text-white" title={user?.displayName} />
+                                            }
+                                            <span className="fs-6 py-0 fw-bold ms-2 me-auto">{review.name}</span>
+                                        </div>
+                                    </div>
+                                    <hr className="border-5 text-white" />
+                                    <p className="py-0 text-start">{review.reviewDescription}</p>
+
+                                </div>)
+                    }
+                    {/* <div key={review._id} className="d-flex my-2 mx-auto bg-glass-dark text-white p-2 rounded-2">
+                                    <div className='w-100 p-4'>
+                                        <span className='me-auto'>{
+                                            review.image ?
+                                                <img className="rounded-circle w-10" src={review.image} alt="" />
+                                                : <FaUserCircle className="fs-2 text-white" title={user?.displayName} />
+                                        }</span>
+                                        <span className="fs-5 py-0 fw-bold ms-2 me-auto">{review.name}</span>
+                                        <hr className="d-none d-sm-block" />
+                                        <p className="py-0 text-start">{review.reviewDescription}</p>
+                                    </div>
+                                </div> */}
+                    {/* conditional comment section  */}
                     <div className='p-2'>
                         {
                             user?.uid ?
