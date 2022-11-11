@@ -29,10 +29,10 @@ const Home = () => {
             <hr className="text-white display-5" />
             <p className="fs-6 text-white">Check out my latest services. <br /> The latest services comes with 50% offer for the first 5 weeks.</p>
             {
-                services.map(service => <div key={service.service_id} className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
+                services.map(service => <div key={service._id} className="d-flex my-2 my-lg-4 col-11 col-lg-9 col-10 mx-auto  bg-trans text-white p-2 rounded-3">
                     <PhotoProvider>
                         <PhotoView src={service.picture}>
-                            <img className="w-25 m-2 rounded" src={service.picture} alt="Card image" />
+                            <img className="w-25 m-2 rounded" src={service.picture} alt="" />
                         </PhotoView>
                     </PhotoProvider>
                     <div className='mx-auto p-0 p-lg-2'>
