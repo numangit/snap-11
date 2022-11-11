@@ -31,7 +31,6 @@ const AddService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 event.target.reset();
             })
             .catch(error => console.error(error));
