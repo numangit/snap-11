@@ -15,15 +15,33 @@ const MyReviews = () => {
             })
     }, [user?.email])
     console.log(myReviews)
+    //delete handler
+    const handleDelete = id => {
+        const confirm = window.confirm('Please Confirm');
+        if (confirm) {
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+                        const remaining = myReviews.filter(review => review._id !== id);
+                        setMyReviews(remaining);
+                    }
+                })
+        }
+    }
+
     return (
         <div className="my-lg-5 pb-sm-5 py-5 py-lg-2 mt-5 mb-0 mt-md-0">
             <h1 className="my-2 mt-lg-5 display-5 fw-semibold text-white">Your reviews</h1>
             <hr className="col-7 col-lg-4 text-white mx-auto" />
 
             {
-                myReviews ?
+                myReviews.length !== 0 ?
                     myReviews.map(review =>
-                        <div className="col-11 col-lg-6 mx-auto rounded-3 my-2 p-2">
+                        <div key={review._id} className="col-11 col-lg-6 mx-auto rounded-3 my-2 p-2">
                             <div className="d-flex mx-auto bg-glass-dark text-white">
                                 <div className='mx-auto p-4'>
                                     <div className="d-lg-flex">
@@ -32,7 +50,7 @@ const MyReviews = () => {
                                             <Link to="../MyReviews/UpdateReview/UpdateReview">
                                                 <button className="btn btn-sm btn-outline-light fw-semibold">Update<AiFillEdit /></button>
                                             </Link>
-                                            <button className=" ms-1 btn btn-sm text-white btn-outline-light fw-semibold"><AiFillDelete /></button>
+                                            <button onClick={() => handleDelete(review._id)} className=" ms-1 btn btn-sm text-white btn-outline-light fw-semibold"><AiFillDelete /></button>
                                         </span>
                                     </div>
                                     <hr className="d-none d-sm-block" />
