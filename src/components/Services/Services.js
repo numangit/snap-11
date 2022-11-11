@@ -13,7 +13,7 @@ const UpdateReview = () => {
     useTitle('Snap | Services');
     useEffect(() => {
         setLoading(true);
-        fetch("http://localhost:5000/services")
+        fetch("https://snap-server-11.vercel.app/services")
             .then(res => res.json())
             .then(data => {
                 setServices(data);

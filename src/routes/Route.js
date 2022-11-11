@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
             {
                 path: 'services/:id',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/services/${params.id}`)
+                    return fetch(`https://snap-server-11.vercel.app/services/${params.id}`)
                 },
                 element: <ServiceDetails></ServiceDetails>
             },
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
             {
                 path: '/MyReviews/UpdateReview/UpdateReview/:id',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/reviews/${params.id}`)
+                    return fetch(`https://snap-server-11.vercel.app/reviews/${params.id}`)
                 },
                 element: <UpdateReview></UpdateReview>
             },

@@ -11,7 +11,7 @@ const MyReviews = () => {
     const [myReviews, setMyReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myReviews?email=${user?.email}`, {
+        fetch(`https://snap-server-11.vercel.app/myReviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('snap-token')}`
             }
@@ -26,7 +26,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const confirm = window.confirm('Please Confirm');
         if (confirm) {
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://snap-server-11.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

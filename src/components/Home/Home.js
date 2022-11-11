@@ -12,7 +12,7 @@ const Home = () => {
     useTitle('Snap');
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/HomeServices")
+        fetch("https://snap-server-11.vercel.app/HomeServices")
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

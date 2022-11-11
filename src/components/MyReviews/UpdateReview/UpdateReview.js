@@ -13,7 +13,7 @@ const UpdateReview = () => {
         event.preventDefault();
         const reviewDescription = event.target.review.value;
 
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://snap-server-11.vercel.app/reviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

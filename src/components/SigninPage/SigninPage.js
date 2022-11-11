@@ -26,7 +26,7 @@ const SigninPage = () => {
                 setLoading(false);
                 e.target.reset();
                 const currentUser = { email: user.email }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://snap-server-11.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -52,7 +52,7 @@ const SigninPage = () => {
                 setUser(user);
                 setLoading(false);
                 const currentUser = { email: user.email }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://snap-server-11.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
