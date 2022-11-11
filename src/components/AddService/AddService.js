@@ -1,19 +1,54 @@
 import React from 'react';
 
 const AddService = () => {
+
+    const handleAddService = event => {
+        event.preventDefault();
+        const serviceName = event.target.name.value;
+        const price = event.target.price.value;
+        const camera = event.target.camera.value;
+        const lens = event.target.lens.value;
+        const serviceDescription = event.target.description.value;
+        const servicePicture = event.target.photoUrl.value;
+        console.log(serviceName, price, camera, lens, serviceDescription, servicePicture);
+
+        const newService = {
+            serviceName,
+            price,
+            camera,
+            lens,
+            description: serviceDescription,
+            picture: servicePicture
+        }
+
+        fetch('http://localhost:5000/services', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newService)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                event.target.reset();
+            })
+            .catch(error => console.error(error));
+    }
+
     return (
         <div className="my-5 pt-5">
             <main className="col-11 col-lg-8 mx-auto p-4 rounded-4">
                 <h1 className="my-2 display-5 fw-semibold text-white">Add Service</h1>
                 <hr className="col-7 col-lg-4 text-white mx-auto" />
                 <p className="text-white mb-3 fs-6 ">Create a new service</p>
-                <form  >
+                <form onSubmit={handleAddService} >
                     <div className="form-floating text-dark fs-6 my-2">
                         <input type="text" name="name" className="form-control" id="floatingInput" placeholder="name@example.com" required />
                         <label htmlFor="floatingInput">Service Name</label>
                     </div>
                     <div className="form-floating text-dark fs-6 my-2">
-                        <input type="number" name="price" className="form-control" id="floatingInput" placeholder="name@example.com" required />
+                        <input type="text" name="price" className="form-control" id="floatingInput" placeholder="name@example.com" required />
                         <label htmlFor="floatingInput">Service Price</label>
                     </div>
                     <div className="form-floating text-dark fs-6 my-2">
