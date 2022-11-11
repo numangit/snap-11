@@ -1,17 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import SpinnerComponent from '../SpinnerComponent/SpinnerComponent';
 
 const UpdateReview = () => {
+    const { loading, setLoading } = useContext(AuthContext);
     const [services, setServices] = useState([]);
+
     useTitle('Snap | Services');
     useEffect(() => {
+        setLoading(true);
         fetch("http://localhost:5000/services")
             .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
+            .then(data => {
+                setServices(data);
+                setLoading(false);
+            })
+    }, [setLoading])
+
+    // setting loader
+    if (loading) {
+        return <div className="spinner-border m-5" role="status">
+            <SpinnerComponent></SpinnerComponent>
+        </div>
+    }
+
     return (
         <div className="my-lg-5 pb-sm-5 py-5 py-lg-2 mt-5 mb-0 mt-md-0">
             <h1 className="my-2 mt-lg-5 display-5 fw-semibold text-white">Services</h1>

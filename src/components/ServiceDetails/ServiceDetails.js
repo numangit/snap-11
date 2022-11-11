@@ -13,7 +13,7 @@ const ServiceDetails = () => {
     const { user, loading, setLoading } = useContext(AuthContext);
     const { _id, name, price, lens, camera, picture, description } = useLoaderData();
     const [serviceReviews, setServiceReviews] = useState();
-    const [currentServiceReviews, setCurrentServiceReviews] = useState(serviceReviews);
+    // const [currentServiceReviews, setCurrentServiceReviews] = useState(serviceReviews);
     console.log(serviceReviews)
 
 
@@ -106,7 +106,7 @@ const ServiceDetails = () => {
                     {
                         loading ? <SpinnerComponent></SpinnerComponent>
                             : serviceReviews?.map(review =>
-                                <div key={review._id} class="my-2 mx-auto bg-glass-dark text-white p-2 p-lg-4 rounded-2">
+                                <div key={review._id} className="my-2 mx-auto bg-glass-dark text-white p-2 p-lg-4 rounded-2">
                                     <div className='d-flex'>
                                         <div className="">
                                             {
