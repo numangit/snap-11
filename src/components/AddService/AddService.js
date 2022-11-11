@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
+    useTitle('Snap | Add Services');
     // adding service data
     const handleAddService = event => {
         event.preventDefault();

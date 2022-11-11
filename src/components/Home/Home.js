@@ -6,8 +6,10 @@ import TotalUserRatings from './TotalUserRatings/TotalUserRatings';
 import Recommendation from './Recommendation/Recommendation';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import useTitle from '../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Snap');
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/HomeServices")

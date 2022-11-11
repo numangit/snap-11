@@ -1,7 +1,9 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
+import useTitle from '../../hooks/useTitle';
 
 const Blogs = () => {
+    useTitle('Snap | Blogs');
     return (
         <div className="my-lg-0 pb-sm-5 py-5 mt-5 mb-0 mt-md-0">
             <div>

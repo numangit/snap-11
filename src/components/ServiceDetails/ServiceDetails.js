@@ -6,8 +6,10 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import SpinnerComponent from '../SpinnerComponent/SpinnerComponent';
 import { FaUserCircle } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetails = () => {
+    useTitle('Snap | Service Details');
     const { user, loading, setLoading } = useContext(AuthContext);
     const { _id, name, price, lens, camera, picture, description } = useLoaderData();
     const [serviceReviews, setServiceReviews] = useState();
@@ -120,18 +122,6 @@ const ServiceDetails = () => {
 
                                 </div>)
                     }
-                    {/* <div key={review._id} className="d-flex my-2 mx-auto bg-glass-dark text-white p-2 rounded-2">
-                                    <div className='w-100 p-4'>
-                                        <span className='me-auto'>{
-                                            review.image ?
-                                                <img className="rounded-circle w-10" src={review.image} alt="" />
-                                                : <FaUserCircle className="fs-2 text-white" title={user?.displayName} />
-                                        }</span>
-                                        <span className="fs-5 py-0 fw-bold ms-2 me-auto">{review.name}</span>
-                                        <hr className="d-none d-sm-block" />
-                                        <p className="py-0 text-start">{review.reviewDescription}</p>
-                                    </div>
-                                </div> */}
                     {/* conditional comment section  */}
                     <div className='p-2'>
                         {

@@ -3,8 +3,10 @@ import { AiFillDelete, AiFillEdit } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
+    useTitle('Snap | My reviews');
     const { user } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([])
 

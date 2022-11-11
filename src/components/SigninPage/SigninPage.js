@@ -4,8 +4,10 @@ import Lottie from "lottie-react";
 import camera from '../Home/56718-camera.json';
 import { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const SigninPage = () => {
+    useTitle('Snap | Signin');
     const { setUser, loginUser, googleSignin, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();

@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useTitle from '../../../hooks/useTitle';
 
 
 const UpdateReview = () => {
+    useTitle('Snap | Update review');
     const { _id, reviewDescription } = useLoaderData();
 
     //update handler
