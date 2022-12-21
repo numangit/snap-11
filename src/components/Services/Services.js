@@ -3,11 +3,10 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
-import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import SpinnerComponent from '../SpinnerComponent/SpinnerComponent';
 
 const UpdateReview = () => {
-    const { loading, setLoading } = useContext(AuthContext);
+    const [loading, setLoading] = useState(false);
     const [services, setServices] = useState([]);
 
     useTitle('Snap | Services');

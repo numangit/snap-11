@@ -7,15 +7,27 @@ import Recommendation from './Recommendation/Recommendation';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import useTitle from '../../hooks/useTitle';
+import SpinnerComponent from '../SpinnerComponent/SpinnerComponent';
 
 const Home = () => {
     useTitle('Snap');
     const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
+        setLoading(true);
         fetch("https://snap-server-11.vercel.app/HomeServices")
             .then(res => res.json())
-            .then(data => setServices(data))
-    }, [])
+            .then(data => {
+                setServices(data)
+                setLoading(false)
+            })
+    }, [setLoading])
+
+    //loader
+    if (loading) {
+        return <div className='d-flex justify-content-center align-items-center vh-100'><SpinnerComponent></SpinnerComponent></div>;
+    }
     return (
         <div className="my-lg-0 pb-sm-5 mt-5 mb-0 mt-md-0">
             <div className="d-block align-items-center d-lg-flex flex-lg-row-reverse">
