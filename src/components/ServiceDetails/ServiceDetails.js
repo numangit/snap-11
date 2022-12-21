@@ -14,6 +14,11 @@ const ServiceDetails = () => {
     const { _id, name, price, lens, camera, picture, description } = useLoaderData();
     const [serviceReviews, setServiceReviews] = useState();
 
+    //scroll at the top after page is rendered
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     useEffect(() => {
         setLoading(true);
         fetch(`https://snap-server-11.vercel.app/serviceReviews?service=${_id}`)

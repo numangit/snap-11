@@ -10,6 +10,11 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
     const [myReviews, setMyReviews] = useState([])
 
+    //scroll at the top after page is rendered
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     useEffect(() => {
         fetch(`https://snap-server-11.vercel.app/myReviews?email=${user?.email}`, {
             headers: {

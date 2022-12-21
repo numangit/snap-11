@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
     useTitle('Snap | Add Services');
+
+    //scroll at the top after page is rendered
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     // adding service data
     const handleAddService = event => {
         event.preventDefault();

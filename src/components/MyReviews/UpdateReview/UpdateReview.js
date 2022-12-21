@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useTitle from '../../../hooks/useTitle';
@@ -7,6 +7,11 @@ import useTitle from '../../../hooks/useTitle';
 const UpdateReview = () => {
     useTitle('Snap | Update review');
     const { _id, reviewDescription } = useLoaderData();
+
+    //scroll at the top after page is rendered
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     //update handler
     const handleUpdate = event => {
